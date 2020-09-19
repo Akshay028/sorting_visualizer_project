@@ -5,15 +5,13 @@ import { getBubbleSortAnimations } from "../SortingAlgorithm/BubbleSort.js";
 import { getSelectionSortAnimations } from "../SortingAlgorithm/SelectionSort.js";
 import "./SortingVisualizer.css";
 
-const ANIMATION_SPEED_MS = 3;
+const ANIMATION_SPEED_MS = 2;
 
-const NUMBER_OF_ARRAY_BARS = 190;
+const NUMBER_OF_ARRAY_BARS = 120;
 
 const PRIMARY_COLOR = "turquoise";
 
 const SECONDARY_COLOR = "red";
-
-// const THIRD_COLOR = "yellow";
 
 export class SortingVisualizer extends React.Component {
   constructor(props) {
@@ -150,19 +148,6 @@ export class SortingVisualizer extends React.Component {
     }
   }
 
-  // testSortingAlgorithms() {
-  //   for (let i = 0; i < 100; i++) {
-  //     const array = [];
-  //     const length = randomIntFromInterval(1, 1000);
-  //     for (let i = 0; i < length; i++) {
-  //       array.push(randomIntFromInterval(-1000, 1000));
-  //     }
-  //     const javaScriptSortedArray = array.slice().sort((a, b) => a - b);
-  //     const mergeSortedArray = getMergeSortAnimations(array.slice());
-  //     console.log(arraysAreEqual(javaScriptSortedArray, mergeSortedArray));
-  //   }
-  // }
-
   render() {
     const { array } = this.state;
 
@@ -193,9 +178,6 @@ export class SortingVisualizer extends React.Component {
         <button className="myButton" onClick={() => this.selectionSort()}>
           Selection Sort
         </button>
-        {/* <button onClick={() => this.testSortingAlgorithms()}>
-          Test Sorting Algorithms (BROKEN)
-        </button> */}
       </div>
     );
   }
@@ -204,15 +186,5 @@ export class SortingVisualizer extends React.Component {
 function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-// function arraysAreEqual(arrayOne, arrayTwo) {
-//   if (arrayOne.length !== arrayTwo.length) return false;
-//   for (let i = 0; i < arrayOne.length; i++) {
-//     if (arrayOne[i] !== arrayTwo[i]) {
-//       return false;
-//     }
-//   }
-//   return true;
-// }
 
 export default SortingVisualizer;
